@@ -1,36 +1,40 @@
 module.exports = function main(str) {
-    console.log("Debug Info");
+    
 	var firstline=["._.", "...", "._.", "._.", "...", "._.", "._.", "._.", "._.", "._."];
 	var secondline=["|.|", "..|", "._|", "._|", "|_|", "|_.", "|_.", "..|", "|_|", "|_|"];
 	var thirdline=["|_|", "..|", "|_.", "._|", "..|", "._|", "|_|", "..|", "|_|", "..|"];
 	var len=str.length;
+	var result="";
 	
 	for (var i=0; i<len; i++){
 		var thisnum=parseInt(str[i]);
-		console.log(firstline[thisnum]);
+		result+=firstline[thisnum];
 		if (i!=len-1){
-			console.log(" ");
+			result+=" ";
 		}
+		else
+			result+="\n";
 	}
 		
 	for (var i=0; i<len; i++){
 		var thisnum=parseInt(str[i]);
-		console.log(secondline[thisnum]);
-		console.log(" ");
+		result+=secondline[thisnum];
 		if (i!=len-1){
-			console.log(" ");
+			result+=" ";
 		}
+		else
+			result+="\n";
 	}
 	
 	for (var i=0; i<len; i++){
 		var thisnum=parseInt(str[i]);
-		console.log(thirdline[thisnum]);
-		console.log(" ");
+		result+=thirdline[thisnum];
 		if (i!=len-1){
-			console.log(" ");
+			result+=" ";
 		}
+		else
+			result+="\n";
 	}
 	
-		
-    return 'Hello World!';
+	return result;
 };
